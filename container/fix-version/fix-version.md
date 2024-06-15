@@ -1,11 +1,11 @@
-# A Importância de Fixar a Versão da Instalação dos Pacotes em um Container Docker
+# A importância de fixar a versão da instalação dos pacotes em um container docker
 
-Fala galera, tudo bem? Bora falar sobre um assunto importante pra quem mexe com Docker: a importância de fixar a versão dos pacotes. Isso aí pode parecer chato e desnecessário, mas é essencial pra evitar dor de cabeça no futuro.
+Fala galera, tudo bem? Bora falar sobre um assunto importante para quem mexe com Docker: a importância de fixar a versão dos pacotes. Isso aí pode parecer chato e desnecessário, mas é essencial pra evitar dor de cabeça no futuro.
 
 Vou te passar um caso que vivenciei recentemente que quebrou todo meu pipeline e me deu uma dor de cabeça, desnecessária.
 
 ## Meu caso mais antigo sem definir uma versão
-A alguns anos atrás eu utilizei uma imagem da comunidade disponível no dockerhub, poxa a poc que eu estava fazendo funcionou perfeitamente. Então adicionei ela direto no meu deploy, mal sabia que além de funcionar maravilhosamente bem, estava arrumando para a cabeça do meu eu do futuro. 
+Há alguns anos eu utilizei uma imagem da comunidade disponível no dockerhub, poxa a poc que eu estava fazendo funcionou perfeitamente. Então adicionei ela direto no meu deploy, mal sabia que além de funcionar maravilhosamente bem, estava arrumando para a cabeça do meu eu do futuro. 
 
 Alguns meses depois da aplicação funcionando, DO NADA, parou de funcionar e eu não sabia nem por onde começar, não sabia o que tinha acontecido, procurava até debaixo do tapete e nada de achar a causa raiz. Sim, meu processo de observabilidade não era tão maduro naquela época.
 
@@ -15,7 +15,7 @@ Ainda, sim, para solucionar o problema eu voltei a imagem na "versão" anterior 
 
 Que sufoco, mas o foi problema resolvido. Agora porque a aplicação foi atualizada e como? 
 
-Comecei a investigar esse ponto e encontrei o motivo meu deploy estava utilizando um "imagePullPolicy: Always" no kubernetes, esse ponto irei discutir mais para frente em outro artigo. Mas já adianto, se está utilizando isso em seu deploy, troque por "ifNotPresent", vai te poupar de varias outras coisas também que você nem imagina que possa dar problema. **De onde veio esse tem muito mais!**
+Comecei a investigar esse ponto e encontrei o motivo meu deploy estava utilizando um "imagePullPolicy: Always" no kubernetes, esse ponto irei discutir mais para frente em outro artigo. Mas já adianto, se está utilizando isso em seu deploy, troque por "ifNotPresent", vai te poupar de várias outras coisas também que você nem imagina que possa dar problema. **De onde veio esse tem muito mais!**
 
 # Ante de tudo como assim fixar uma versão?
 
@@ -27,9 +27,9 @@ Vamos ver como a gente faz para fixar essas versões nos Dockerfiles. Vou te mos
 
 -**Base Image**: FROM alpine – Aqui estamos usando a imagem mais recente do Alpine disponível. Pode mudar com o tempo.
 
--**Instalação do PHP**: apk --no-cache add php82 – Esse comando vai instalar a versão mais recente do PHP 8.2 disponível no repositório. Pode variar dependendo de quando o build for executado.
+-**Instalação do PHP**: apk --no-cache add php82 – Esse comando vai instalar a versão mais recente do PHP 8.2 disponível no repositório. Pode variar dependendo de quando a build for executado.
 
-### Aqui esta com dockerfile com versões fixadas
+### Aqui está com dockerfile com versões fixadas
 
 ![dockerfile-after.png](./dockerfile-after.png)
 
@@ -45,7 +45,7 @@ Então, o lance é o seguinte: se você não fixa as versões dos pacotes, cada 
 - Mudanças de API: Novas versões pode mudar como você deve usar o pacote, o que pode quebrar sua aplicação.
 - Bugs Introduzidos: Atualizações pode trazer novos bugs. 
 
-Sim, isso acontece! Olha aqui... No momento do build da imagem quebrou..
+Sim, isso acontece! Olha aqui... No momento do build da imagem quebrou.
 
 
 ![breaking-changes.png](./breaking-changes.png)
@@ -58,7 +58,7 @@ ERROR... palavrinha que mais vejo por ai rsrsrs...
 - Segurança: Você também pode aplicar patches de segurança de maneira controlada. Se você sabe exatamente quais versões tá usando, fica mais fácil identificar e corrigir vulnerabilidades.
 
 ## Meu caso mais recente mesmo definindo uma versão
-Mesmo tendo aprendido da pior maneira, a minha nova imagem docker continha o alpine fixado na versão 3.19 com o php8.2 na versão 8.2.19-r0, coisinha de ai ai meu deus, to seguindo as boas práticas né? Pois é, só que não!
+Mesmo tendo aprendido da pior maneira, a minha nova imagem docker continha o alpine fixado na versão 3.19 com o php8.2 na versão 8.2.19-r0, coisinha de ai ai meu deus, tô seguindo as boas práticas né? Pois é, só que não!
 
 Olhe na imagem abaixo percebe que a data de build do pacote php82 na versão 8.2.20-r0 foi realizada no dia 06/06/2024
 
@@ -73,9 +73,9 @@ Essa nova versão de build corrigiu 3 vulnerabilidades de segurança. Sendo:
 Vocês podem conferir diretamente no commit do registry do alpine 
 [https://git.alpinelinux.org/aports/commit/?id=a7abe5f43dd2884bec684cf11f794dc8854fdba4](https://git.alpinelinux.org/aports/commit/?id=a7abe5f43dd2884bec684cf11f794dc8854fdba4), pow bacana, menos 3 problemas pra nos preocupar e o que isso tem de errado? Nada.
 
-Mas ocorreu dos builds da imagem que estavam utilizando a versão "8.2.19-r0" quebrarem, simplesmente porque "removeram" a versão que eu estava utilizando.
+Mas ocorreu das builds da imagem que estavam utilizando a versão "8.2.19-r0" quebrarem, simplesmente porque "removeram" a versão que eu estava utilizando.
 
-O que me deixou de cabelo em pé é segurança... que de certa forma fiquei extremamente feliz porque parou de funcionar o deploy. Sim, pq parou de funcionar e não estou louco.
+O que me deixou de cabelo em pé é segurança... que de certa forma fiquei extremamente feliz porque parou de funcionar o deploy. Sim, porque parou de funcionar e não estou louco.
 
 Simplesmente porque tive a oportunidade entender o que ocorreu e me levou a conclusão dos seguintes pontos
 
