@@ -5,7 +5,7 @@ Fala galera, tudo bem? Bora falar sobre um assunto importante pra quem mexe com 
 Vou te passar um caso que vivenciei recentemente que quebrou todo meu pipeline e me deu uma dor de cabeça, desnecessária.
 
 ## Meu caso mais antigo sem definir uma versão
-A alguns atrás eu utilizei uma imagem da comunidade disponível no dockerhub, poxa a poc que eu estava fazendo funcionou perfeitamente. Então adicionei ela direto no meu deploy, mal sabia que além de funcionar maravilhosamente bem, estava arrumando para a cabeça do meu eu do futuro. 
+A alguns anos atrás eu utilizei uma imagem da comunidade disponível no dockerhub, poxa a poc que eu estava fazendo funcionou perfeitamente. Então adicionei ela direto no meu deploy, mal sabia que além de funcionar maravilhosamente bem, estava arrumando para a cabeça do meu eu do futuro. 
 
 Alguns meses depois da aplicação funcionando, DO NADA, parou de funcionar e eu não sabia nem por onde começar, não sabia o que tinha acontecido, procurava até debaixo do tapete e nada de achar a causa raiz. Sim, meu processo de observabilidade não era tão maduro naquela época.
 
