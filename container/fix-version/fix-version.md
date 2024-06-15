@@ -17,11 +17,11 @@ Que sufoco. O problema foi resolvido, agora porque a aplicação foi atualizada 
 
 Comecei a investigar esse ponto e encontrei o motivo meu deploy estava utilizando um "imagePullPolicy: Always" no kubernetes, esse ponto irei discutir em outro momento. Mas já adianto, se está utilizando isso em seu deploy, troque por "ifNotPresent", vai te poupar de várias outras coisas também que você nem imagina que possa dar problema. **De onde veio esse tem muito mais!**
 
-# Ante de tudo como assim fixar uma versão?
+# Antes de tudo como assim fixar uma versão?
 
-Vamos ver como fazemos para fixar essas versões nos Dockerfiles. Vou te mostrar um exemplo antes e após fixar a versão, explicando cada ponto.
+Vamos ver como fazemos para fixar essas versões nos Dockerfiles, vou te mostrar um exemplo antes e após fixar a versão, explicando cada ponto.
 
-### Aqui tá um Dockerfile sem fixar a versão:
+### Aqui está um Dockerfile sem fixar a versão:
 
 ![dockerfile-before.png](./dockerfile-before.png)
 
@@ -41,8 +41,8 @@ Vamos ver como fazemos para fixar essas versões nos Dockerfiles. Vou te mostrar
 Então, o lance é o seguinte: se você não fixa as versões dos pacotes, cada vez que você reconstrói um container, pode acabar pegando versões diferentes dos pacotes. E aí, meu amigo, começam os problemas. Atualizações pode trazer mudanças que quebra seu código ou introduzir novos bugs.
 
 ## Exemplos de Problemas Comuns
-- Compatibilidade de Dependências: Às vezes, um pacote depende de uma versão específica de outro pacote. Se um deles atualizar e o outro não, já era.
-- Mudanças de API: Novas versões pode mudar como você deve usar o pacote, o que pode quebrar sua aplicação.
+- Compatibilidade de Dependências: Às vezes, um pacote depende de uma versão específica de outro pacote, se um deles atualizar e o outro não, já era.
+- Mudanças de API: Novas versões podem mudar como você deve usar o pacote, o que pode quebrar sua aplicação.
 - Bugs Introduzidos: Atualizações pode trazer novos bugs. 
 
 Sim, isso acontece! Olha aqui... No momento da build da imagem quebrou.
