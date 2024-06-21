@@ -1,4 +1,4 @@
-# A Importância da Cadeia de Suprimentos na Proteção do Seu Código
+# Descomplicando a cadeia de suprimentos de software "Supply Chain"
 
 No Artigo [fix-version.md](../../container/fix-version/fix-version.md), levantei um ponto um tanto interessante, de certa forma ao consumir um repositório externo estou permitindo que terceiros contribuam com meu software, não só isso, mas permitindo que mesmo indiretamente eles manipulem meu software.
 
