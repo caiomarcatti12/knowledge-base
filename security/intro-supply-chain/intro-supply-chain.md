@@ -60,7 +60,7 @@ Quando desenvolvemos um software, incluímos diversos componentes como: serviço
 
 Agora, que sabemos o que é supply chain e o que faz parte dela, nosso software está realmente seguro? É confiável? Assim como em uma padaria, onde um ingrediente de má qualidade pode estragar o pão, no desenvolvimento de software, um componente inseguro ou ineficiente pode comprometer todo o sistema.
 
-Quer saber como vou prevenir o meu container docker de um ataque direto no repositório? Semana que vem disponibilizarei esse laboratório com uma forma que vou dificultar a vida para essa vulnerabilidade.
+Quer saber como vou prevenir o meu container docker de um ataque direto no repositório? Semana que vem disponibilizarei esse laboratório com uma forma que vou dificultar a vida para essa vulnerabilidade. Sim, dificultar! como um virus que estamos tratando com antibiótico ele pode morrer ou voltar mais forte!
 
 Enquanto isso, vamos lá verificar a qualidade e a segurança de cada parte do nosso software, e não vamos negligenciar nenhum detalhe, por menor que pareça. Afinal, a segurança é feita em camadas e a eficiência do nosso produto final dependem da integridade de toda a cadeia de suprimentos.
 
