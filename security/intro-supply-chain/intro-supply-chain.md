@@ -62,5 +62,5 @@ Agora, que sabemos o que é supply chain e o que faz parte dela, nosso software 
 
 Quer saber como vou prevenir o meu container docker de um ataque direto no repositório? Semana que vem disponibilizarei esse laboratório com uma forma que vou dificultar a vida para essa vulnerabilidade. Sim, dificultar! como um virus que estamos tratando com antibiótico ele pode morrer ou voltar mais forte!
 
-Enquanto isso, vamos lá verificar a qualidade e a segurança de cada parte do nosso software, e não vamos negligenciar nenhum detalhe, por menor que pareça. Afinal, a segurança é feita em camadas e a eficiência do nosso produto final dependem da integridade de toda a cadeia de suprimentos.
+Enquanto isso, vamos lá verificar a qualidade e a segurança de cada parte do nosso software, e não vamos negligenciar nenhum detalhe por menor que pareça. Afinal, a segurança é feita em camadas e a eficiência do nosso produto final depende da integridade de toda a cadeia de suprimentos e não somente da gente.
 
