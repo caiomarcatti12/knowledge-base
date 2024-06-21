@@ -2,11 +2,11 @@
 
 No Artigo [fix-version.md](../../container/fix-version/fix-version.md), levantei um ponto um tanto interessante, de certa forma ao consumir um repositório externo estou permitindo que terceiros contribuam com meu software, não só isso, mas permitindo que mesmo indiretamente eles manipulem meu software.
 
-### Manipulação do Software
+### Manipulando meu software
 
 Quando digo "manipular o software", precisamos entender que não é só sobre código. Um software possui diversas camadas. Sim, o código final que produzimos é apenas a cereja do bolo 🎂.
 
-### Análise das Camadas do Software
+### Camadas do Software
 
 **Hardware:** Inclui CPU, memória, disco, placa de rede e periféricos que suportam o funcionamento do software.
 
