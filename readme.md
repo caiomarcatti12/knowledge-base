@@ -2,6 +2,14 @@
 
 Este projeto tem como objetivo centralizar todos mos meus aprendizados, facilitando o acesso e a consulta de informações importantes sobre diversas tecnologias e práticas.
 
+## Alguns dos meus projetos 
+
+- [**RabbitMQ Auto-Scale Docker**](https://github.com/caiomarcatti12/rabbitmq-auto-scale-docker) 
+É uma solução projetada para gerenciar o escalonamento automático de contêineres RabbitMQ em um ambiente Docker. Inspirado na capacidade de sistemas distribuídos de se adaptarem dinamicamente às demandas, este projeto visa fornecer uma alternativa escalável e eficiente para operações de RabbitMQ em ambientes diversos, incluindo produção, homologação e desenvolvimento.
+
+- [**RabbitMQ Auto-Scale Docker**](https://github.com/caiomarcatti12/api-gateway-auto-scale-docker)
+  É uma solução inovadora que simula a funcionalidade do Knative no Docker. Inspirado na capacidade do Knative de gerenciar aplicações serverless no Kubernetes, este projeto visa fornecer uma alternativa para aqueles que utilizam o Docker em diferentes ambientes, seja produção, homologação ou desenvolvimento.
+
 ## Artigos
 
 - **Containers**
