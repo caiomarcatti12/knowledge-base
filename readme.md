@@ -25,6 +25,10 @@ Este projeto tem como objetivo centralizar todos mos meus aprendizados, facilita
 
 ## Conteudos mais densos
 
+- **Linguagens**
+  - **Go**
+    - [`go get` em repositórios privados](./languages/go/go-get-private-repo.md) - Explica como forçar o uso de SSH ao usar go get com repositórios privados, evitando erros de permissão e problemas com proxies públicos.
+
 - **Cloud**
   - [**Tags**](./tags/readme.md) - As tags são ferramentas simples e extremamente poderosas para organização e gestão de recursos em ambientes de nuvem.
     - [**Introdução**](./tags/readme.md) - Fornece uma visão geral da documentação e a importância do uso de tags em ambientes de nuvem.
